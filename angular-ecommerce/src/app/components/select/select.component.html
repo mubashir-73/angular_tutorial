@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <select
+    class="ml-10 w-80 bg-white border rounded-xl p-2 mt-4 shadow-md px-2"
+    name="category"
+    formControlName="category"
+    value="category"
+    (change)="changeCategory(form.get('category')?.value || 'Undefined')"
+  >
+    <option value="category" selected>Select a category</option>
+    @for (category of categories(); track category) {
+      <option [value]="category">{{ category }}</option>
+    }
+  </select>
+</form>
