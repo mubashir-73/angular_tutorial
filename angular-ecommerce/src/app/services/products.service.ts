@@ -16,4 +16,7 @@ export class ProductsService {
     console.log(data);
   }
   constructor() {}
+  getProduct(id: Number): Product | undefined {
+    return this.products().find((product: Product) => product.id === id);
+  }
 }
